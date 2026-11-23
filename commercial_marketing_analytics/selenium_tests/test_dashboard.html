@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commercial Marketing Analytics Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 30px;
+        }
+        h1 {
+            color: #243447;
+        }
+        .dashboard {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 150px;
+        }
+        .value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        select {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="dashboard-title">Commercial Marketing Analytics Dashboard</h1>
+
+    <label for="campaign-filter">Campaign:</label>
+    <select id="campaign-filter">
+        <option value="all">All Campaigns</option>
+        <option value="festive">Festive Offer</option>
+    </select>
+
+    <div class="dashboard">
+        <div class="card">
+            <p>Total Revenue</p>
+            <div class="value" id="revenue">958498.30</div>
+        </div>
+
+        <div class="card">
+            <p>Total Orders</p>
+            <div class="value" id="orders">1800</div>
+        </div>
+
+        <div class="card">
+            <p>Unique Customers</p>
+            <div class="value" id="customers">250</div>
+        </div>
+
+        <div class="card">
+            <p>Total Gross Profit</p>
+            <div class="value" id="profit">291887.70</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("campaign-filter")
+            .addEventListener("change", function () {
+
+                if (this.value === "festive") {
+                    document.getElementById("revenue").textContent = "158000";
+                    document.getElementById("profit").textContent = "41050";
+                } else {
+                    document.getElementById("revenue").textContent = "958498.30";
+                    document.getElementById("profit").textContent = "291887.70";
+                }
+            });
+    </script>
+
+</body>
+</html>
