@@ -1,58 +1,90 @@
-\# Commercial \& Marketing Analytics: Customer Segmentation, Sales Forecasting \& Promotional ROI
+# Commercial & Marketing Analytics
 
 
 
-\## Project Overview
+**Customer Segmentation | Sales Analysis | Campaign Performance | Revenue Forecasting**
 
 
 
-This portfolio project uses a \*\*synthetic retail sales dataset\*\* to demonstrate a commercial analytics workflow, including data validation, exploratory analysis, customer segmentation, campaign performance analysis, baseline sales forecasting, and dashboard reporting.
+## Project Overview
 
 
 
-> \*\*Data Note:\*\* The dataset is artificially generated for learning and portfolio demonstration. It does not represent a real company or real customers.
+This portfolio project uses a **synthetic retail sales dataset** to demonstrate an end-to-end commercial analytics workflow. It covers data validation, exploratory data analysis, customer segmentation, campaign performance analysis, baseline sales forecasting, SQL analysis, dashboard reporting, and browser automation testing.
 
 
 
-\## Business Questions
+> **Data Note:** The dataset is artificially generated for learning and portfolio demonstration. It does not represent a real company or real customers.
 
 
 
-1\. Which product categories and products contribute the most revenue and gross profit?
-
-2\. Which customer groups are most valuable based on Recency, Frequency, and Monetary value (RFM)?
-
-3\. How do promotional campaigns compare on revenue and estimated profit?
-
-4\. What is a simple baseline forecast for monthly revenue, and how accurate is it?
-
-5\. What business actions should a commercial or marketing team consider?
+## Verified Project Results
 
 
 
-\## Tools and Technologies
+- Processed 1,800 synthetic sales orders across 24 months.
+
+- Validated order IDs, quantities, revenue, and missing values.
+
+- Generated monthly revenue, gross profit, and order KPIs.
+
+- Segmented 250 customers using Recency, Frequency, and Monetary (RFM) analysis into five groups.
+
+- Analysed campaign performance, including 768 orders without campaign attribution.
+
+- Evaluated a three-month moving-average forecast using a three-month holdout.
+
+- Executed six Selenium browser automation tests: **6 passed, 0 failed**.
 
 
 
-\- \*\*Python:\*\* pandas, matplotlib, scikit-learn
-
-\- \*\*SQL:\*\* SQLite
-
-\- \*\*Excel:\*\* PivotTables and independent validation
-
-\- \*\*Power BI:\*\* Interactive dashboard and KPI reporting
-
-\- \*\*Selenium WebDriver:\*\* Browser automation
-
-\- \*\*Pytest:\*\* Automated test execution and assertions
-
-\- \*\*pytest-html:\*\* HTML test reporting
-
-\- \*\*Git and GitHub:\*\* Version control and documentation
+## Business Questions
 
 
 
-\## Repository Structure
+1. Which product categories contribute the most revenue and gross profit?
+
+2. Which customer groups are most valuable based on RFM analysis?
+
+3. How do promotional campaigns compare in revenue and estimated profit?
+
+4. How accurately does a simple baseline forecast predict monthly revenue?
+
+5. What business actions could a commercial or marketing team consider?
+
+
+
+## Tools and Technologies
+
+
+
+| Area | Tools |
+
+|---|---|
+
+| Programming | Python |
+
+| Data Analysis | pandas, NumPy |
+
+| Visualization | Matplotlib, Power BI |
+
+| Forecast Evaluation | scikit-learn |
+
+| Database | SQLite |
+
+| Querying | SQL |
+
+| Spreadsheet Analysis | Microsoft Excel, PivotTables |
+
+| Browser Automation | Selenium WebDriver |
+
+| Testing | Pytest, pytest-html |
+
+| Version Control | Git and GitHub |
+
+
+
+## Repository Structure
 
 
 
@@ -60,87 +92,104 @@ This portfolio project uses a \*\*synthetic retail sales dataset\*\* to demonstr
 
 commercial-marketing-analytics/
 
-│
+|
 
-├── data/
+|-- data/
 
-│   └── sales\_campaigns.csv
+|   |-- sales_campaigns.csv
 
-│
+|   |-- sales_campaigns_backup.csv
 
-├── python/
+|
 
-│   └── analysis.py
+|-- python/
 
-│
+|   |-- analysis.py
 
-├── sql/
+|
 
-│   └── analysis\_queries.sql
+|-- sql/
 
-│
+|   |-- analysis_queries.sql
 
-├── powerbi/
+|
 
-│   └── dashboard\_build\_guide.md
+|-- powerbi/
 
-│
+|   |-- dashboard_build_guide.md
 
-├── selenium\_tests/
+|
 
-│   ├── test\_browser.py
+|-- selenium_tests/
 
-│   ├── test\_dashboard.html
+|   |-- test_browser.py
 
-│   ├── requirements.txt
+|   |-- test_dashboard.html
 
-│   └── artifacts/
+|   |-- requirements.txt
 
-│       ├── dashboard\_screenshot.png
+|   |-- artifacts/
 
-│       └── test\_report.html
+|       |-- dashboard_screenshot.png
 
-│
+|       |-- test_report.html
 
-├── screenshots/
+|
 
-├── requirements.txt
+|-- outputs/
 
-└── README.md
+
+|-- requirements.txt
+
+|-- README.md
 
 ```
 
 
 
-\## Python Data Analysis
+*Note: The structure above describes the main project components. Generated output files and optional folders may vary.*
 
 
 
-The Python analysis demonstrates:
+## Python Data Analysis
 
 
 
-\- Data loading and validation
-
-\- Exploratory data analysis
-
-\- Customer segmentation
-
-\- Campaign performance analysis
-
-\- Baseline sales forecasting
+The Python pipeline performs:
 
 
 
-\### How to Run
+- Data loading and validation.
+
+- Missing-value and duplicate checks.
+
+- Monthly revenue and gross profit analysis.
+
+- Product category performance analysis.
+
+- Campaign performance analysis.
+
+- Customer RFM segmentation.
+
+- Baseline revenue forecasting.
+
+- Forecast error evaluation.
+
+- SQLite database generation.
+
+- Monthly revenue visualization.
 
 
 
-1\. Install Python 3.10 or later.
+### How to Run
 
-2\. Open a terminal in the project folder.
 
-3\. Install dependencies:
+
+1. Install Python 3.10 or later.
+
+2. Open a terminal in the project root directory.
+
+3. Install dependencies:
 
 
 
@@ -152,7 +201,7 @@ pip install -r requirements.txt
 
 
 
-4\. Run the analysis:
+4. Execute the analysis:
 
 
 
@@ -164,93 +213,137 @@ python python/analysis.py
 
 
 
-5\. The script writes summary CSV files to `outputs/`.
+5. Generated reports and charts are saved in the `outputs/` directory.
 
 
 
-\## SQL Analysis
+### Generated Outputs
 
 
 
-The SQL file contains SQLite-compatible queries for analysing sales, revenue, product categories, and campaign performance.
+| File | Description |
+
+|---|---|
+
+| `data_quality_checks.csv` | Data validation summary |
+
+| `monthly_kpis.csv` | Monthly revenue, gross profit, and orders |
+
+| `category_performance.csv` | Product category analysis |
+
+| `campaign_performance.csv` | Campaign revenue and discount analysis |
+
+| `customer_rfm_segments.csv` | Customer segmentation results |
+
+| `forecast_holdout_evaluation.csv` | Actual versus forecast revenue |
+
+| `forecast_mae.txt` | Mean Absolute Error |
+
+| `next_month_baseline_forecast.txt` | Baseline next-month forecast |
+
+| `commercial_analytics.sqlite` | SQLite database |
+
+| `monthly_revenue.png` | Monthly revenue chart |
 
 
 
-Queries can be executed using DB Browser for SQLite or through a Python SQLite connection.
+## SQL Analysis
 
 
 
-\## Excel Validation
+The project includes SQLite-compatible queries for analysing:
 
 
 
-Open `data/sales\_campaigns.csv` in Excel and validate:
+- Sales and revenue.
+
+- Monthly business performance.
+
+- Product category performance.
+
+- Campaign performance.
+
+- Customer purchasing patterns.
 
 
 
-\- Unique `order\_id` values
-
-\- Positive quantities
-
-\- Revenue calculations
-
-\- Required fields and missing values
+Queries can be executed using DB Browser for SQLite or a Python SQLite connection.
 
 
 
-Create PivotTables for revenue by month, category, and campaign to independently validate analysis results.
+## Excel Validation
 
 
 
-\## Power BI Dashboard
+Excel is used for independent validation of the dataset and analytical outputs.
 
 
 
-The interactive dashboard includes:
+Validation activities include:
 
 
 
-\- Total Revenue
+- Checking unique order IDs.
 
-\- Total Orders
+- Checking positive quantities.
 
-\- Average Order Value
+- Reviewing revenue calculations.
 
-\- Total Units Sold
+- Identifying missing values.
 
-\- Unique Customers
-
-\- Total Gross Profit
-
-\- Gross Profit Margin
-
-\- Revenue by Category
-
-\- Campaign Performance
-
-\- Monthly Revenue Trend
-
-\- Campaign, Category, and Date slicers
+- Creating PivotTables for monthly, category, and campaign analysis.
 
 
 
-The dashboard was validated against independent Excel calculations.
+## Power BI Dashboard
 
 
 
-\## Selenium Browser Automation
+The dashboard build guide documents an interactive commercial analytics dashboard with the following planned KPI and analysis areas:
 
 
 
-A local browser-based dashboard test page was created to practise and demonstrate Selenium WebDriver automation with Python and Pytest.
+- Total Revenue.
+
+- Total Orders.
+
+- Average Order Value.
+
+- Total Units Sold.
+
+- Unique Customers.
+
+- Total Gross Profit.
+
+- Gross Profit Margin.
+
+- Revenue by Category.
+
+- Campaign Performance.
+
+- Monthly Revenue Trend.
+
+- Campaign, Category, and Date slicers.
 
 
 
-\### Automation Coverage
+Refer to `powerbi/dashboard_build_guide.md` for dashboard implementation details.
 
 
 
-The test suite includes six automated test cases:
+## Selenium Browser Automation
+
+
+
+A local HTML dashboard test page is used to practise and demonstrate Selenium WebDriver automation with Python and Pytest.
+
+
+
+### Automation Coverage
+
+
+
+The test suite contains six automated test cases:
 
 
 
@@ -266,31 +359,31 @@ The test suite includes six automated test cases:
 
 | Campaign filter reset | Checks restoration of original values |
 
-| KPI visibility | Checks that KPI values are visible and non-empty |
+| KPI visibility | Checks KPI values are visible and non-empty |
 
 | Screenshot capture | Saves a browser screenshot as test evidence |
 
 
 
-\### Technologies
+### Technologies
 
 
 
-\- Selenium WebDriver 4.54.0
+- Selenium WebDriver
 
-\- Pytest 9.2.0
+- Pytest
 
-\- pytest-html 4.2.0
+- pytest-html
 
-\- Google Chrome
-
-
-
-\### Installation
+- Google Chrome
 
 
 
-Create and activate a virtual environment, then install the test dependencies:
+### Installation
+
+
+
+Create a virtual environment:
 
 
 
@@ -302,123 +395,136 @@ python -m venv .venv
 
 
 
-Windows PowerShell:
+Activate it in Windows PowerShell:
 
 
 
 ```powershell
 
-.\\.venv\\Scripts\\Activate.ps1
+.\.venv-automation\Scripts\Activate.ps1
 
 ```
 
 
 
-Install the packages:
+Install Selenium test dependencies:
 
 
 
 ```bash
 
-pip install -r selenium\_tests/requirements.txt
+pip install -r selenium_tests/requirements.txt
 
 ```
 
 
 
-\### Execute Automation Tests
+### Execute Automation Tests
 
 
 
-From the project root, run:
+From the project root:
 
 
 
 ```bash
 
-python -m pytest selenium\_tests/test\_browser.py -v
+python -m pytest selenium_tests/test_browser.py -v
 
 ```
 
 
 
-\### Generate HTML Test Report
+### Generate HTML Test Report
 
 
 
 ```bash
 
-python -m pytest selenium\_tests/test\_browser.py -v --html=selenium\_tests/artifacts/test\_report.html --self-contained-html
+python -m pytest selenium_tests/test_browser.py -v --html=selenium_tests/artifacts/test_report.html --self-contained-html
 
 ```
 
 
 
-\### Test Results
+### Latest Verified Test Results
 
 
 
-\*\*Latest verified local execution: 6 passed, 0 failed.\*\*
+**6 passed, 0 failed**
 
 
 
-The test suite validates the local HTML test fixture. It does not directly automate or interact with Power BI Desktop.
+Execution time: 38.25 seconds.
 
 
 
-\### Test Evidence
+The tests validate the local HTML dashboard fixture. They do not directly automate or interact with Power BI Desktop.
 
 
 
-\- `selenium\_tests/artifacts/dashboard\_screenshot.png` – Browser screenshot captured through Selenium.
-
-\- `selenium\_tests/artifacts/test\_report.html` – HTML test execution report.
+### Test Evidence
 
 
 
-\## KPI Definitions
+- `selenium_tests/artifacts/dashboard_screenshot.png` — Browser screenshot captured through Selenium.
+
+- `selenium_tests/artifacts/test_report.html` — HTML test execution report.
 
 
 
-\- \*\*Revenue:\*\* Sum of net sales revenue after row-level discounts.
-
-\- \*\*Estimated Gross Profit:\*\* Revenue minus estimated cost. Cost values are synthetic estimates.
-
-\- \*\*Campaign ROI:\*\* Cannot be calculated as actual ROI without marketing spend data.
-
-\- \*\*Forecast Baseline:\*\* A simple seasonal-naive or moving-average forecast for learning and comparison.
+## KPI Definitions
 
 
 
-\## Limitations
+- **Revenue:** Sum of net sales revenue after row-level discounts.
+
+- **Estimated Gross Profit:** Revenue minus estimated cost. Cost values are synthetic estimates.
+
+- **Campaign ROI:** Actual ROI cannot be calculated because marketing spend data is unavailable.
+
+- **Forecast Baseline:** Three-month moving-average forecasting approach evaluated on a time-based holdout.
 
 
 
-\- The dataset is synthetic and does not represent actual market performance.
-
-\- Campaign performance does not prove incremental sales or causation.
-
-\- Actual campaign spending is not included.
-
-\- Forecasting uses a baseline approach rather than a production-grade model.
-
-\- Selenium tests run against a local HTML test fixture, not the Power BI Desktop application.
+## Limitations
 
 
 
-\## Future Improvements
+- The dataset is synthetic and does not represent actual market performance.
+
+- Campaign performance does not establish incremental sales or causation.
+
+- Actual campaign spending is not included.
+
+- Orders without campaign attribution are grouped under `No Campaign`.
+
+- Forecasting uses a simple baseline approach rather than a production-grade predictive model.
+
+- Selenium tests run against a local HTML test fixture, not the actual Power BI dashboard.
 
 
 
-\- Expand Selenium coverage with additional filter and negative test scenarios.
-
-\- Add documented synthetic campaign budget assumptions.
-
-\- Compare forecasting approaches using a time-based holdout.
-
-\- Add customer segment profiles and business recommendations.
-
-\- Add Power BI screenshots and a project walkthrough video.
+## Future Improvements
 
 
 
+- Expand Selenium coverage with negative and boundary test scenarios.
+
+- Add documented synthetic campaign budget assumptions.
+
+- Compare multiple forecasting approaches using time-based validation.
+
+- Develop customer segment profiles and business recommendations.
+
+- Add verified Power BI dashboard screenshots.
+
+- Add a project walkthrough video.
+
+
+
+## Disclaimer
+
+
+
+This project is developed for educational and portfolio demonstration purposes using synthetic data. All generated results are illustrative and should not be interpreted as actual business performance.

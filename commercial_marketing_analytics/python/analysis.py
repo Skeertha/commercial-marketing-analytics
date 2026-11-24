@@ -9,7 +9,8 @@ DATA = ROOT / "data" / "sales_campaigns.csv"
 OUT = ROOT / "outputs"
 OUT.mkdir(exist_ok=True)
 
-df = pd.read_csv(DATA, parse_dates=["order_date"])
+df = pd.read_csv(DATA)
+df["order_date"] = pd.to_datetime(df["order_date"], format="%d-%m-%Y", errors="raise")
 
 # 1) Data quality checks
 checks = {
@@ -38,12 +39,16 @@ category = df.groupby("category", as_index=False).agg(
 ).sort_values("revenue", ascending=False)
 category.to_csv(OUT / "category_performance.csv", index=False)
 
+# 3) Campaign performance
+df["campaign"] = df["campaign"].fillna("No Campaign").replace("None", "No Campaign")
+
 campaign = df.groupby("campaign", as_index=False).agg(
     revenue=("revenue", "sum"),
     gross_profit=("gross_profit", "sum"),
     orders=("order_id", "nunique"),
     average_discount=("discount_pct", "mean")
 ).sort_values("revenue", ascending=False)
+
 campaign.to_csv(OUT / "campaign_performance.csv", index=False)
 
 # 3) RFM customer segmentation

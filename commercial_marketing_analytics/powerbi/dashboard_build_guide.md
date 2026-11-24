@@ -2,12 +2,12 @@
 
 ## 1. Import data
 1. Open Power BI Desktop.
-2. Select **Get data → Text/CSV**.
+2. Select **Get data -> Text/CSV**.
 3. Select `data/sales_campaigns.csv`.
 4. Confirm `order_date` is Date, quantity is Whole number, and monetary columns are Decimal number.
 5. Select **Load**.
 
-## 2. Create measures (Modeling → New measure)
+## 2. Create measures (Modeling -> New measure)
 ```DAX
 Total Revenue = SUM(sales_campaigns[revenue])
 
