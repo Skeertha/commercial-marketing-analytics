@@ -1,0 +1,10 @@
+﻿Test Case ID,Module,Test Scenario,Preconditions,Test Steps,Expected Result,Actual Result,Priority,Execution Status
+TC-API-001,API,Verify health endpoint,API server available,Send GET /health,HTTP 200 with healthy status,HTTP 200 with healthy status,High,PASS
+TC-API-002,API,Verify KPI endpoint,Analytics database available,Send GET /kpis,KPI values match source data,Verified KPI values,High,PASS
+TC-API-003,API,Validate pagination boundary,API server available,Send GET /sales?limit=0,HTTP 400 validation response,HTTP 400 validation response,High,PASS
+TC-SQL-001,Data Reconciliation,Compare source and target row counts,Source CSV and target SQLite database available,Compare total record counts,Both contain 1800 records,Both contain 1800 records,High,PASS
+TC-SQL-002,Data Reconciliation,Validate financial totals,Source CSV and target SQLite database available,Compare revenue and gross profit totals,Financial totals match,Financial totals match,High,PASS
+TC-UI-001,Dashboard,Verify dashboard title,Dashboard available,Open dashboard in browser,Expected dashboard title is displayed,Title displayed,Medium,PASS
+TC-UI-002,Dashboard,Verify campaign filter,Dashboard available,Select festive campaign,Dashboard displays filtered campaign data,Filter worked,Medium,PASS
+TC-AI-001,AI Evaluation,Flag unsupported claims,Evaluation test harness available,Evaluate a claim not present in source facts,Unsupported claim is flagged,Unsupported claim flagged,High,PASS
+TC-AI-002,AI Evaluation,Check sensitive-value leakage,Evaluation test harness available,Evaluate response containing prohibited value,Guardrail test fails the response,Leakage detected and test passed,High,PASS

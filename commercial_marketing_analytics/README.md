@@ -1,4 +1,4 @@
-# Commercial & Marketing Analytics
+﻿# Commercial & Marketing Analytics
 
 
 
@@ -528,3 +528,42 @@ The tests validate the local HTML dashboard fixture. They do not directly automa
 
 
 This project is developed for educational and portfolio demonstration purposes using synthetic data. All generated results are illustrative and should not be interpreted as actual business performance.
+
+
+
+
+
+
+## Quality Engineering and Test Automation
+
+### Verified QA Coverage
+
+| Testing Area | Tests Passed |
+|---|---:|
+| API Testing | 13 |
+| SQL Reconciliation | 5 |
+| Selenium UI Testing | 6 |
+| AI Response Evaluation | 6 |
+| **Total** | **30** |
+
+### Data Reconciliation
+- Compared 1,800 source CSV records with 1,800 SQLite target records.
+- Validated unique order IDs and financial totals.
+- Seven Excel reconciliation checks passed.
+
+### QA Deliverables
+- `tests/` - API, SQL reconciliation and AI evaluation tests.
+- `selenium_tests/` - browser UI automation.
+- `api/` - Python REST API.
+- `qa_ai/` - rule-based AI response evaluation.
+- `qa_management/test_cases.csv` - Jira-style practice test cases.
+- `qa_management/defect_log.csv` - defect tracking template.
+- `outputs/qa_test_report.html` - consolidated test report.
+- `outputs/qa_reconciliation_workbook.xlsx` - Excel reconciliation workbook.
+
+### Run Tests
+
+`.\.venv-automation\Scripts\python.exe -m pytest .\tests .\selenium_tests -v --html=.\outputs\qa_test_report.html --self-contained-html`
+
+**Note:** AI evaluation uses rule-based checks, not a live AI model. Jira-style files are practice artifacts, not records from a live Jira instance.
+
